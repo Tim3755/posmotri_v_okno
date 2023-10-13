@@ -80,7 +80,7 @@ ol {
   font-size: 18px;
   background-color: transparent;
   border-top: 1px solid #fff;
-  border-bottom:1px solid white;
+  border-bottom: 1px solid white;
   border-right: none;
   border-left: none;
   width: 225px;
@@ -154,8 +154,8 @@ ol {
   display: flex;
   justify-content: space-between;
 }
-.content__list-item:not(:first-child):not(:last-child) {
-  margin-top: 30px;
+.content__list-item:not(:last-of-type) {
+  margin-bottom: 30px;
 }
 .content__video-card {
   display: flex;
@@ -195,7 +195,6 @@ ol {
   line-height: 16.2px;
 }
 .more-button {
-  margin-top: 30px;
   width: 100%;
 }
 .search-form__submit-button:active,
@@ -209,8 +208,16 @@ ol {
   text-decoration-color: white;
   text-underline-offset: 2px;
   text-decoration-thickness: 1px;
+  cursor: pointer;
 }
 .search-form__textfield:focus {
+  outline: none;
+}
+.search-form__textfield:active {
+  border-right: 1px solid white;
+  border-left: 1px solid white;
+}
+.search-form__label:has(:active):not(:focus) {
   outline: none;
 }
 .search-form__label:has(:focus-visible) {
